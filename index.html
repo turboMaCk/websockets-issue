@@ -1,0 +1,23 @@
+<!doctype HTML>
+<html>
+  <head><title>Websockets issue</title></head>
+  <body>
+    <button onClick="disconnect()">Disconnect</button>
+
+    <script type="text/javascript">
+      var ws = new WebSocket("ws://127.0.0.1:9160");
+
+      ws.onopen = function () {
+        console.log('ws connected');
+      };
+
+      ws.onclose = function () {
+        console.log('ws closed');
+      };
+
+      function disconnect() {
+        ws.close();
+      }
+    </script>
+  <body>
+</html>
